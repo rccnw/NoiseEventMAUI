@@ -1,0 +1,13 @@
+
+
+MAUI project
+.NET 7 preview RC2
+
+7.0.0-rc.2.6866 
+10/20/2022
+https://github.com/dotnet/maui/releases/
+
+
+
+
+
