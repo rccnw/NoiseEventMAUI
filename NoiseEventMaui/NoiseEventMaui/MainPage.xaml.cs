@@ -1,5 +1,10 @@
 ﻿namespace NoiseEventMaui;
 
+
+using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
+
 public partial class MainPage : ContentPage
 {
 	int count = 0;
@@ -9,16 +14,19 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+		var hanaLoc = new Location(20.7557, -155.9880);
+		MapSpan mapSpan = MapSpan.FromCenterAndRadius(hanaLoc, Distance.FromKilometers(3));
+		map.MoveToRegion(mapSpan);
+		map.Pins.Add(new Pin
+		{ 
+			Label = "Noise Event",
+			Location = hanaLoc
+		});
+    }
 }
 
