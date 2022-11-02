@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Maui;
-using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Hosting;
+﻿//using CommunityToolkit.Maui;
+//using Microsoft.Extensions.Logging;
+//using Microsoft.Maui.Controls.Hosting;
 
 
 namespace NoiseEventMaui;
@@ -21,8 +21,13 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+        builder.Services.AddTransient<ReportApiService>();
+        builder.Services.AddSingleton<MainPageViewModel>();
+
+        builder.Services.AddSingleton<MainPage>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();

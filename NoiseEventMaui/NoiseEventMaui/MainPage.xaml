@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NoiseEventMaui.MainPage">
+             x:Class="NoiseEventMaui.MainPage"
+             xmlns:model ="clr-namespace:NoiseEventMaui.Models"
+             xmlns:viewmodel ="clr-namespace:NoiseEventMaui.ViewModels"
+             x:DataType ="viewmodel:MainPageViewModel"
+             Title="{Binding Title}">
 
-    <Grid>
-        <Map x:Name="map" />
-    </Grid>
-    
+
+    <VerticalStackLayout Margin="50">
+        <Button Text="Report Noise" Command="{Binding ReportCommand}"  IsEnabled ="True" />
+    </VerticalStackLayout>
+
+
+
 
 
 

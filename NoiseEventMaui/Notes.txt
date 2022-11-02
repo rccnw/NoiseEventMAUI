@@ -98,3 +98,19 @@ Microsoft.Extensions.Logging.Debug
 installed		7.0.0-rc.2.22472.3
 
 
+    <Grid>
+        <Map x:Name="map" />
+    </Grid>
+
+
+
+
+Versioning .net Core applications using Cake
+https://gsferreira.com/archive/2018/06/versioning-net-core-applications-using-cake/
+
+If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo".
+
+The alternative is the Directory.Build.props file
+If you place these file in the root folder that contains your source code, 
+when MSBuild runs will add to every project the properties defined in the Directory.Build.props.
+
