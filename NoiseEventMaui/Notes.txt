@@ -10,4 +10,91 @@ https://github.com/dotnet/maui/releases/
 
 
 
+https://stackoverflow.com/questions/57633613/error-api-key-not-found-when-i-am-trying-to-add-google-map-to-xamarin
+Your API keys can be found in your Google Cloud Platform Console
+Here's the link : https://console.cloud.google.com/apis/credentials
+
+You can check for the status of your "Maps SDK for Android" by searching for it in the GCP console's API Library : https://console.cloud.google.com/apis/library
+
+Check this docs page: https://learn.microsoft.com/en-us/xamarin/android/platform/maps-and-location/maps/maps-api#-specify-the-required-permissions
+
+Scroll down a bit to the large code block after "The following snippet is an example of the settings that must be added to AndroidManifest.XML:" and make sure to replace YOUR_API_KEY with your actual api key.
+
+Copied from link (in case it goes away):
+
+
+The following snippet is an example of the settings that must be added to AndroidManifest.XML:
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+          android:versionName="4.5" 
+          package="com.xamarin.docs.android.mapsandlocationdemo2" 
+          android:versionCode="6">
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
+
+    <!-- Google Maps for Android v2 requires OpenGL ES v2 -->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <!-- Necessary for apps that target Android 9.0 or higher -->
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+
+    <!-- Permission to receive remote notifications from Google Play Services -->
+    <!-- Notice here that we have the package name of our application as a prefix on the permissions. -->
+    <uses-permission android:name="<PACKAGE NAME>.permission.MAPS_RECEIVE" />
+    <permission android:name="<PACKAGE NAME>.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+
+    <!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application android:label="@string/app_name">
+        <!-- Put your Google Maps V2 API Key here. -->
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <!-- Necessary for apps that target Android 9.0 or higher -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+    </application>
+</manifest>
+
+
+
+android:label="@string/NoiseEvent"
+
+
+
+
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"> 
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+
+
+
+
+    https://vladislavantonyuk.azurewebsites.net/articles/Customize-map-pins-in-.NET-MAUI
+
+
+    https://vladislavantonyuk.azurewebsites.net/?Page=1
+    https://github.com/dotnet/maui-samples
+
+
+    https://learn.microsoft.com/en-us/samples/dotnet/maui-samples/userinterface-views-map/
+
+    https://github.com/dotnet/maui-samples/tree/main/7.0/UserInterface/Views/Map
+
+
+
+Microsoft.Extensions.Logging.Debug
+installed		7.0.0-rc.2.22472.3
+
 
