@@ -1,10 +1,4 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-namespace NoiseEventMaui.Services
+﻿namespace NoiseEventMaui.Services
 {
     public class ReportApiService
     {
@@ -25,7 +19,7 @@ namespace NoiseEventMaui.Services
                 response.EnsureSuccessStatusCode();
                 StatusMessage = "Report Successful";
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
                 StatusMessage = "Failed to report noise.";
             }

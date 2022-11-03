@@ -1,11 +1,4 @@
-﻿//using SQLite;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-namespace NoiseEventMaui.Models
+﻿namespace NoiseEventMaui.Models
 {
 
     public class NoiseEvent

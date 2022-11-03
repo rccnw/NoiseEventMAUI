@@ -1,9 +1,4 @@
-﻿//using CommunityToolkit.Maui;
-//using Microsoft.Extensions.Logging;
-//using Microsoft.Maui.Controls.Hosting;
-
-
-namespace NoiseEventMaui;
+﻿namespace NoiseEventMaui;
 
 public static class MauiProgram
 {

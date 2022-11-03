@@ -23,3 +23,5 @@ global using NoiseEventMaui;
 global using NoiseEventMaui.Services;
 global using NoiseEventMaui.Models;
 global using NoiseEventMaui.ViewModels;
+
+//global using SQLite;
