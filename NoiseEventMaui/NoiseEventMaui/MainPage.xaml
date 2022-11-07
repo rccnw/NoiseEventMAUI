@@ -9,7 +9,10 @@
 
 
     <VerticalStackLayout Margin="50">
+       
+
         <Button Text="Report Noise" Command="{Binding ReportCommand}"  IsEnabled ="True" />
+
     </VerticalStackLayout>
 
 

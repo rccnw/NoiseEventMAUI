@@ -1,4 +1,8 @@
 
+home
+47.5339, -122.3755
+
+
 
 MAUI project
 .NET 7 preview RC2
@@ -113,4 +117,96 @@ If you are moving to .net Core and you want to implement a versioning strategy i
 The alternative is the Directory.Build.props file
 If you place these file in the root folder that contains your source code, 
 when MSBuild runs will add to every project the properties defined in the Directory.Build.props.
+
+
+
+https://learn.microsoft.com/en-us/xamarin/android/platform/maps-and-location/maps/maps-application
+When you use the maps application, the map will not be part of your application. 
+Instead, your application will launch the maps application and load the map externally. 
+
+
+Set up Android device for debugging
+
+https://learn.microsoft.com/en-us/dotnet/maui/android/device/setup
+
+
+Publish a .NET MAUI app for iOS
+https://learn.microsoft.com/en-us/dotnet/maui/ios/deployment/overview
+
+Publish a .NET MAUI app for Windows
+https://learn.microsoft.com/en-us/dotnet/maui/windows/deployment/overview
+
+Publish a .NET MAUI app for Android
+https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/overview
+
+
+
+https://stackoverflow.com/questions/38327148/map-coordinates-c-sharp
+
+
+capturing present position information from a GPS device linked to a computer through a serial port
+https://www.c-sharpcorner.com/article/mapping-with-a-gps-and-C-Sharp/
+
+https://csharp.hotexamples.com/examples/System/Coordinate/-/php-coordinate-class-examples.html
+
+https://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates?rq=1
+
+
+
+Location type from MAUI Essentials
+https://github.com/dotnet/maui/blob/18ed02b41a35edad98aef79ec677c42ebff52890/src/Essentials/src/Types/Location.shared.cs
+
+
+public class Location
+	{
+	/// <include file="../../docs/Microsoft.Maui.Essentials/Location.xml" path="//Member[@MemberName='.ctor'][3]/Docs/*" />
+		public Location(double latitude, double longitude)
+		{
+			Latitude = Math.Min(Math.Max(latitude, -90.0), 90.0);
+			Longitude = Math.Min(Math.Max(longitude, -180.0), 180.0);
+			Timestamp = DateTimeOffset.UtcNow;
+		}
+
+		/// <include file="../../docs/Microsoft.Maui.Essentials/Location.xml" path="//Member[@MemberName='.ctor'][4]/Docs/*" />
+		public Location(double latitude, double longitude, DateTimeOffset timestamp)
+		{
+			Latitude = latitude;
+			Longitude = longitude;
+			Timestamp = timestamp;
+		}
+
+		public Location(Location point)
+		{
+			if (point == null)
+				throw new ArgumentNullException(nameof(point));
+
+			Latitude = point.Latitude;
+			Longitude = point.Longitude;
+			Timestamp = DateTime.UtcNow;
+			Altitude = point.Altitude;
+			Accuracy = point.Accuracy;
+			VerticalAccuracy = point.VerticalAccuracy;
+			ReducedAccuracy = point.ReducedAccuracy;
+			Speed = point.Speed;
+			Course = point.Course;
+			IsFromMockProvider = point.IsFromMockProvider;
+		}
+
+        		public DateTimeOffset Timestamp { get; set; }
+
+		/// <include file="../../docs/Microsoft.Maui.Essentials/Location.xml" path="//Member[@MemberName='Latitude']/Docs/*" />
+		public double Latitude { get; set; }
+
+		/// <include file="../../docs/Microsoft.Maui.Essentials/Location.xml" path="//Member[@MemberName='Longitude']/Docs/*" />
+		public double Longitude { get; set; }
+		public bool IsFromMockProvider { get; set; }
+
+
+		CalculateDistance(latitudeStart, longitudeStart, locationEnd.Latitude, locationEnd.Longitude, units);
+
+
+        more there.....
+
+
+
 

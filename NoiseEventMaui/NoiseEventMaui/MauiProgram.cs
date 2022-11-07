@@ -1,4 +1,6 @@
-﻿namespace NoiseEventMaui;
+﻿//using IMap = Microsoft.Maui.Maps.IMap;
+
+namespace NoiseEventMaui;
 
 public static class MauiProgram
 {
@@ -18,6 +20,8 @@ public static class MauiProgram
 
         builder.Services.AddTransient<ReportApiService>();
         builder.Services.AddSingleton<MainPageViewModel>();
+		builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+        //builder.Services.AddSingleton<IMap>(Map.Default);
 
         builder.Services.AddSingleton<MainPage>();
 
